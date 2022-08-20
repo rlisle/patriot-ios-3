@@ -6,7 +6,7 @@
 //
 
 import XCTest
-@testable import Patriot
+@testable import Patriot3
 
 class MockSettingsStore: SettingsProviding {
     var mockBool: Bool?

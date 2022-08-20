@@ -8,7 +8,7 @@
 
 import XCTest
 import SwiftUI
-@testable import Patriot
+@testable import Patriot3
 
 class MenuViewTests: XCTestCase {
     

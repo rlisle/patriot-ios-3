@@ -165,7 +165,7 @@
 			isa = PBXGroup;
 			children = (
 				2757A78828AA6BDB00895DB5 /* ci_scripts */,
-				2747301E265D182E00C8EFDE /* Patriot */,
+				2747301E265D182E00C8EFDE /* Patriot3 */,
 				27473030265D182F00C8EFDE /* PatriotTests */,
 				2747303B265D182F00C8EFDE /* PatriotUITests */,
 				2747301D265D182E00C8EFDE /* Products */,
@@ -183,7 +183,7 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		2747301E265D182E00C8EFDE /* Patriot */ = {
+		2747301E265D182E00C8EFDE /* Patriot3 */ = {
 			isa = PBXGroup;
 			children = (
 				2747301F265D182E00C8EFDE /* PatriotApp.swift */,
@@ -199,7 +199,7 @@
 				2741D1732831342F0077E6CA /* Patriot3.entitlements */,
 				27473025265D182E00C8EFDE /* Preview Content */,
 			);
-			path = Patriot;
+			path = Patriot3;
 			sourceTree = "<group>";
 		};
 		27473025265D182E00C8EFDE /* Preview Content */ = {
@@ -651,12 +651,12 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_ENTITLEMENTS = Patriot/Patriot3.entitlements;
+				CODE_SIGN_ENTITLEMENTS = Patriot3/Patriot3.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_ASSET_PATHS = "\"Patriot/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "\"Patriot3/Preview Content\"";
 				DEVELOPMENT_TEAM = 65NFWK9633;
 				ENABLE_PREVIEWS = YES;
-				INFOPLIST_FILE = Patriot/Info.plist;
+				INFOPLIST_FILE = Patriot3/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = Patriot3;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.lifestyle";
 				INTENTS_CODEGEN_LANGUAGE = Swift;
@@ -677,12 +677,12 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_ENTITLEMENTS = Patriot/Patriot3.entitlements;
+				CODE_SIGN_ENTITLEMENTS = Patriot3/Patriot3.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_ASSET_PATHS = "\"Patriot/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "\"Patriot3/Preview Content\"";
 				DEVELOPMENT_TEAM = 65NFWK9633;
 				ENABLE_PREVIEWS = YES;
-				INFOPLIST_FILE = Patriot/Info.plist;
+				INFOPLIST_FILE = Patriot3/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = Patriot3;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.lifestyle";
 				INTENTS_CODEGEN_LANGUAGE = Swift;

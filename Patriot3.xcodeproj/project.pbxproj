@@ -39,7 +39,7 @@
 		27917127282BCD6A007F4CA5 /* PartOfDayButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27917126282BCD6A007F4CA5 /* PartOfDayButton.swift */; };
 		2798A07C26A3B0E2002FA6F4 /* Sleeping.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2798A07B26A3B0E2002FA6F4 /* Sleeping.swift */; };
 		2798A07E26A455B3002FA6F4 /* SectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2798A07D26A455B3002FA6F4 /* SectionView.swift */; };
-		27CBBCEA28B14D0900636494 /* CocoaMQTT in Frameworks */ = {isa = PBXBuildFile; productRef = 27CBBCE928B14D0900636494 /* CocoaMQTT */; };
+		279DEDB028B152A900A7859F /* CocoaMQTT in Frameworks */ = {isa = PBXBuildFile; productRef = 279DEDAF28B152A900A7859F /* CocoaMQTT */; };
 		27D46756283972A000C5CD5A /* MQTTTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27D46755283972A000C5CD5A /* MQTTTests.swift */; };
 		27D46758283A645100C5CD5A /* DeviceDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27D46757283A645100C5CD5A /* DeviceDetailView.swift */; };
 		27EF59FC2832E37C00E801E2 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27EF59FB2832E37C00E801E2 /* SceneDelegate.swift */; };
@@ -80,16 +80,16 @@
 		27209B0028292E48005A8C2A /* PartOfDay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PartOfDay.swift; sourceTree = "<group>"; };
 		2741D16D283119640077E6CA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2741D16F283126090077E6CA /* Intents.intentdefinition */ = {isa = PBXFileReference; lastKnownFileType = file.intentdefinition; path = Intents.intentdefinition; sourceTree = "<group>"; };
-		2741D1732831342F0077E6CA /* Patriot.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Patriot.entitlements; sourceTree = "<group>"; };
+		2741D1732831342F0077E6CA /* Patriot3.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Patriot3.entitlements; sourceTree = "<group>"; };
 		2741D179283138F40077E6CA /* Intents.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Intents.framework; path = System/Library/Frameworks/Intents.framework; sourceTree = SDKROOT; };
 		2741D184283138F40077E6CA /* IntentsUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = IntentsUI.framework; path = System/Library/Frameworks/IntentsUI.framework; sourceTree = SDKROOT; };
-		2747301C265D182E00C8EFDE /* Patriot.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Patriot.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		2747301C265D182E00C8EFDE /* Patriot3.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Patriot3.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2747301F265D182E00C8EFDE /* PatriotApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PatriotApp.swift; sourceTree = "<group>"; };
 		27473021265D182E00C8EFDE /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		27473023265D182E00C8EFDE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		27473026265D182E00C8EFDE /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		27473028265D182E00C8EFDE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		2747302D265D182F00C8EFDE /* PatriotTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PatriotTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		2747302D265D182F00C8EFDE /* Patriot3Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Patriot3Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		27473031265D182F00C8EFDE /* PatriotModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PatriotModelTests.swift; sourceTree = "<group>"; };
 		27473033265D182F00C8EFDE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2747303E265D182F00C8EFDE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -110,7 +110,7 @@
 		2762F1892846C6FF00C30529 /* HomeViewTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewTests.swift; sourceTree = "<group>"; };
 		2762F18F28477C7000C30529 /* DeviceDetailTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceDetailTests.swift; sourceTree = "<group>"; };
 		2762F19128477DC700C30529 /* MenuTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuTests.swift; sourceTree = "<group>"; };
-		2762F19728478A2200C30529 /* PatriotUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PatriotUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		2762F19728478A2200C30529 /* Patriot3UITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Patriot3UITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		2762F19928478A2200C30529 /* PatriotUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PatriotUITests.swift; sourceTree = "<group>"; };
 		2780FB65282E739800BD32F5 /* EntryTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntryTextField.swift; sourceTree = "<group>"; };
 		278443592837AD6E004176F6 /* RVIntentHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RVIntentHandler.swift; sourceTree = "<group>"; };
@@ -130,7 +130,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				27CBBCEA28B14D0900636494 /* CocoaMQTT in Frameworks */,
+				279DEDB028B152A900A7859F /* CocoaMQTT in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -176,9 +176,9 @@
 		2747301D265D182E00C8EFDE /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				2747301C265D182E00C8EFDE /* Patriot.app */,
-				2747302D265D182F00C8EFDE /* PatriotTests.xctest */,
-				2762F19728478A2200C30529 /* PatriotUITests.xctest */,
+				2747301C265D182E00C8EFDE /* Patriot3.app */,
+				2747302D265D182F00C8EFDE /* Patriot3Tests.xctest */,
+				2762F19728478A2200C30529 /* Patriot3UITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -196,7 +196,7 @@
 				2747304C265D51B200C8EFDE /* Models */,
 				2747304B265D519100C8EFDE /* Views */,
 				27473028265D182E00C8EFDE /* Info.plist */,
-				2741D1732831342F0077E6CA /* Patriot.entitlements */,
+				2741D1732831342F0077E6CA /* Patriot3.entitlements */,
 				27473025265D182E00C8EFDE /* Preview Content */,
 			);
 			path = Patriot;
@@ -327,9 +327,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		2747301B265D182E00C8EFDE /* Patriot */ = {
+		2747301B265D182E00C8EFDE /* Patriot3 */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 27473041265D182F00C8EFDE /* Build configuration list for PBXNativeTarget "Patriot" */;
+			buildConfigurationList = 27473041265D182F00C8EFDE /* Build configuration list for PBXNativeTarget "Patriot3" */;
 			buildPhases = (
 				27473018265D182E00C8EFDE /* Sources */,
 				27473019265D182E00C8EFDE /* Frameworks */,
@@ -340,17 +340,17 @@
 			);
 			dependencies = (
 			);
-			name = Patriot;
+			name = Patriot3;
 			packageProductDependencies = (
-				27CBBCE928B14D0900636494 /* CocoaMQTT */,
+				279DEDAF28B152A900A7859F /* CocoaMQTT */,
 			);
 			productName = Patriot;
-			productReference = 2747301C265D182E00C8EFDE /* Patriot.app */;
+			productReference = 2747301C265D182E00C8EFDE /* Patriot3.app */;
 			productType = "com.apple.product-type.application";
 		};
-		2747302C265D182F00C8EFDE /* PatriotTests */ = {
+		2747302C265D182F00C8EFDE /* Patriot3Tests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 27473044265D182F00C8EFDE /* Build configuration list for PBXNativeTarget "PatriotTests" */;
+			buildConfigurationList = 27473044265D182F00C8EFDE /* Build configuration list for PBXNativeTarget "Patriot3Tests" */;
 			buildPhases = (
 				27473029265D182F00C8EFDE /* Sources */,
 				2747302A265D182F00C8EFDE /* Frameworks */,
@@ -361,17 +361,17 @@
 			dependencies = (
 				2747302F265D182F00C8EFDE /* PBXTargetDependency */,
 			);
-			name = PatriotTests;
+			name = Patriot3Tests;
 			packageProductDependencies = (
 				2762F18D284777DF00C30529 /* SnapshotTesting */,
 			);
 			productName = PatriotTests;
-			productReference = 2747302D265D182F00C8EFDE /* PatriotTests.xctest */;
+			productReference = 2747302D265D182F00C8EFDE /* Patriot3Tests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		2762F19628478A2200C30529 /* PatriotUITests */ = {
+		2762F19628478A2200C30529 /* Patriot3UITests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 2762F19F28478A2200C30529 /* Build configuration list for PBXNativeTarget "PatriotUITests" */;
+			buildConfigurationList = 2762F19F28478A2200C30529 /* Build configuration list for PBXNativeTarget "Patriot3UITests" */;
 			buildPhases = (
 				2762F19328478A2200C30529 /* Sources */,
 				2762F19428478A2200C30529 /* Frameworks */,
@@ -382,9 +382,9 @@
 			dependencies = (
 				2762F19E28478A2200C30529 /* PBXTargetDependency */,
 			);
-			name = PatriotUITests;
+			name = Patriot3UITests;
 			productName = PatriotUITests;
-			productReference = 2762F19728478A2200C30529 /* PatriotUITests.xctest */;
+			productReference = 2762F19728478A2200C30529 /* Patriot3UITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
 /* End PBXNativeTarget section */
@@ -409,7 +409,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 27473017265D182E00C8EFDE /* Build configuration list for PBXProject "Patriot" */;
+			buildConfigurationList = 27473017265D182E00C8EFDE /* Build configuration list for PBXProject "Patriot3" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -426,9 +426,9 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				2747301B265D182E00C8EFDE /* Patriot */,
-				2747302C265D182F00C8EFDE /* PatriotTests */,
-				2762F19628478A2200C30529 /* PatriotUITests */,
+				2747301B265D182E00C8EFDE /* Patriot3 */,
+				2747302C265D182F00C8EFDE /* Patriot3Tests */,
+				2762F19628478A2200C30529 /* Patriot3UITests */,
 			);
 		};
 /* End PBXProject section */
@@ -519,12 +519,12 @@
 /* Begin PBXTargetDependency section */
 		2747302F265D182F00C8EFDE /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 2747301B265D182E00C8EFDE /* Patriot */;
+			target = 2747301B265D182E00C8EFDE /* Patriot3 */;
 			targetProxy = 2747302E265D182F00C8EFDE /* PBXContainerItemProxy */;
 		};
 		2762F19E28478A2200C30529 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 2747301B265D182E00C8EFDE /* Patriot */;
+			target = 2747301B265D182E00C8EFDE /* Patriot3 */;
 			targetProxy = 2762F19D28478A2200C30529 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -651,19 +651,21 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_ENTITLEMENTS = Patriot/Patriot.entitlements;
+				CODE_SIGN_ENTITLEMENTS = Patriot/Patriot3.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"Patriot/Preview Content\"";
 				DEVELOPMENT_TEAM = 65NFWK9633;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = Patriot/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = Patriot3;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.lifestyle";
 				INTENTS_CODEGEN_LANGUAGE = Swift;
 				IPHONEOS_DEPLOYMENT_TARGET = 15.4;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = net.lisles.Patriot;
+				PRODUCT_BUNDLE_IDENTIFIER = net.lisles.Patriot3;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -675,19 +677,21 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_ENTITLEMENTS = Patriot/Patriot.entitlements;
+				CODE_SIGN_ENTITLEMENTS = Patriot/Patriot3.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"Patriot/Preview Content\"";
 				DEVELOPMENT_TEAM = 65NFWK9633;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = Patriot/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = Patriot3;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.lifestyle";
 				INTENTS_CODEGEN_LANGUAGE = Swift;
 				IPHONEOS_DEPLOYMENT_TARGET = 15.4;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = net.lisles.Patriot;
+				PRODUCT_BUNDLE_IDENTIFIER = net.lisles.Patriot3;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -711,7 +715,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Patriot.app/Patriot";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Patriot3.app/Patriot3";
 			};
 			name = Debug;
 		};
@@ -732,7 +736,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Patriot.app/Patriot";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Patriot3.app/Patriot3";
 			};
 			name = Release;
 		};
@@ -777,7 +781,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		27473017265D182E00C8EFDE /* Build configuration list for PBXProject "Patriot" */ = {
+		27473017265D182E00C8EFDE /* Build configuration list for PBXProject "Patriot3" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				2747303F265D182F00C8EFDE /* Debug */,
@@ -786,7 +790,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		27473041265D182F00C8EFDE /* Build configuration list for PBXNativeTarget "Patriot" */ = {
+		27473041265D182F00C8EFDE /* Build configuration list for PBXNativeTarget "Patriot3" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				27473042265D182F00C8EFDE /* Debug */,
@@ -795,7 +799,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		27473044265D182F00C8EFDE /* Build configuration list for PBXNativeTarget "PatriotTests" */ = {
+		27473044265D182F00C8EFDE /* Build configuration list for PBXNativeTarget "Patriot3Tests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				27473045265D182F00C8EFDE /* Debug */,
@@ -804,7 +808,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		2762F19F28478A2200C30529 /* Build configuration list for PBXNativeTarget "PatriotUITests" */ = {
+		2762F19F28478A2200C30529 /* Build configuration list for PBXNativeTarget "Patriot3UITests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				2762F1A028478A2200C30529 /* Debug */,
@@ -840,7 +844,7 @@
 			package = 2762F1862846599A00C30529 /* XCRemoteSwiftPackageReference "swift-snapshot-testing" */;
 			productName = SnapshotTesting;
 		};
-		27CBBCE928B14D0900636494 /* CocoaMQTT */ = {
+		279DEDAF28B152A900A7859F /* CocoaMQTT */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 27CBBCE828B14D0900636494 /* XCRemoteSwiftPackageReference "CocoaMQTT" */;
 			productName = CocoaMQTT;

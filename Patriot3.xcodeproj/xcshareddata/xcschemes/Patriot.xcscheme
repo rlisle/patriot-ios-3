@@ -15,9 +15,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "2747301B265D182E00C8EFDE"
-               BuildableName = "Patriot.app"
-               BlueprintName = "Patriot"
-               ReferencedContainer = "container:Patriot.xcodeproj">
+               BuildableName = "Patriot3.app"
+               BlueprintName = "Patriot3"
+               ReferencedContainer = "container:Patriot3.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -31,9 +31,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "2747302C265D182F00C8EFDE"
-            BuildableName = "PatriotTests.xctest"
-            BlueprintName = "PatriotTests"
-            ReferencedContainer = "container:Patriot.xcodeproj">
+            BuildableName = "Patriot3Tests.xctest"
+            BlueprintName = "Patriot3Tests"
+            ReferencedContainer = "container:Patriot3.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
       <EnvironmentVariables>
@@ -64,9 +64,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "2747302C265D182F00C8EFDE"
-               BuildableName = "PatriotTests.xctest"
-               BlueprintName = "PatriotTests"
-               ReferencedContainer = "container:Patriot.xcodeproj">
+               BuildableName = "Patriot3Tests.xctest"
+               BlueprintName = "Patriot3Tests"
+               ReferencedContainer = "container:Patriot3.xcodeproj">
             </BuildableReference>
          </TestableReference>
          <TestableReference
@@ -74,9 +74,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "2762F19628478A2200C30529"
-               BuildableName = "PatriotUITests.xctest"
-               BlueprintName = "PatriotUITests"
-               ReferencedContainer = "container:Patriot.xcodeproj">
+               BuildableName = "Patriot3UITests.xctest"
+               BlueprintName = "Patriot3UITests"
+               ReferencedContainer = "container:Patriot3.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
@@ -96,9 +96,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "2747301B265D182E00C8EFDE"
-            BuildableName = "Patriot.app"
-            BlueprintName = "Patriot"
-            ReferencedContainer = "container:Patriot.xcodeproj">
+            BuildableName = "Patriot3.app"
+            BlueprintName = "Patriot3"
+            ReferencedContainer = "container:Patriot3.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <EnvironmentVariables>
@@ -125,9 +125,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "2747301B265D182E00C8EFDE"
-            BuildableName = "Patriot.app"
-            BlueprintName = "Patriot"
-            ReferencedContainer = "container:Patriot.xcodeproj">
+            BuildableName = "Patriot3.app"
+            BlueprintName = "Patriot3"
+            ReferencedContainer = "container:Patriot3.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>

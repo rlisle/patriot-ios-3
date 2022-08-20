@@ -1,0 +1,64 @@
+# Compiled Object files
+*.slo
+*.lo
+*.o
+*.obj
+*.bin
+
+# Precompiled Headers
+*.gch
+*.pch
+
+# Compiled Dynamic libraries
+*.so
+*.dylib
+*.dll
+
+# Fortran module files
+*.mod
+*.smod
+
+# Compiled Static libraries
+*.lai
+*.la
+*.a
+*.lib
+
+# Executables
+*.exe
+*.out
+*.app
+
+# Other
+.DS_Store
+
+# CLion work files
+cmake-build-debug
+.idea/
+CMakeLists.txt
+
+# Xcode files
+*.xcuserstate
+xcuserdata/
+#xcshareddata/ Need to include Package.resolved
+Secrets.swift
+Packages
+
+*.ipa
+*.dSYM.zip
+*.dSYM
+
+# Fastlane
+fastlane/report.xml
+fastlane/Preview.html
+fastlane/screenshots/**/*.png
+fastlane/test_output
+
+# Alexa archive
+Archive.zip
+
+# Node modules
+node_modules
+
+# Secrets
+secrets.h

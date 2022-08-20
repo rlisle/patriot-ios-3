@@ -39,11 +39,11 @@
 		27917127282BCD6A007F4CA5 /* PartOfDayButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27917126282BCD6A007F4CA5 /* PartOfDayButton.swift */; };
 		2798A07C26A3B0E2002FA6F4 /* Sleeping.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2798A07B26A3B0E2002FA6F4 /* Sleeping.swift */; };
 		2798A07E26A455B3002FA6F4 /* SectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2798A07D26A455B3002FA6F4 /* SectionView.swift */; };
+		27CBBCEA28B14D0900636494 /* CocoaMQTT in Frameworks */ = {isa = PBXBuildFile; productRef = 27CBBCE928B14D0900636494 /* CocoaMQTT */; };
 		27D46756283972A000C5CD5A /* MQTTTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27D46755283972A000C5CD5A /* MQTTTests.swift */; };
 		27D46758283A645100C5CD5A /* DeviceDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27D46757283A645100C5CD5A /* DeviceDetailView.swift */; };
 		27EF59FC2832E37C00E801E2 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27EF59FB2832E37C00E801E2 /* SceneDelegate.swift */; };
 		27EF98102848CEE000E0C088 /* MQTTButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27EF980F2848CEE000E0C088 /* MQTTButton.swift */; };
-		27FCDDC9283E54D400632BAE /* CocoaMQTT in Frameworks */ = {isa = PBXBuildFile; productRef = 27FCDDC8283E54D400632BAE /* CocoaMQTT */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -130,7 +130,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				27FCDDC9283E54D400632BAE /* CocoaMQTT in Frameworks */,
+				27CBBCEA28B14D0900636494 /* CocoaMQTT in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -342,7 +342,7 @@
 			);
 			name = Patriot;
 			packageProductDependencies = (
-				27FCDDC8283E54D400632BAE /* CocoaMQTT */,
+				27CBBCE928B14D0900636494 /* CocoaMQTT */,
 			);
 			productName = Patriot;
 			productReference = 2747301C265D182E00C8EFDE /* Patriot.app */;
@@ -419,8 +419,8 @@
 			);
 			mainGroup = 27473013265D182E00C8EFDE;
 			packageReferences = (
-				27FCDDC7283E54D400632BAE /* XCRemoteSwiftPackageReference "CocoaMQTT" */,
 				2762F1862846599A00C30529 /* XCRemoteSwiftPackageReference "swift-snapshot-testing" */,
+				27CBBCE828B14D0900636494 /* XCRemoteSwiftPackageReference "CocoaMQTT" */,
 			);
 			productRefGroup = 2747301D265D182E00C8EFDE /* Products */;
 			projectDirPath = "";
@@ -824,12 +824,12 @@
 				minimumVersion = 1.0.0;
 			};
 		};
-		27FCDDC7283E54D400632BAE /* XCRemoteSwiftPackageReference "CocoaMQTT" */ = {
+		27CBBCE828B14D0900636494 /* XCRemoteSwiftPackageReference "CocoaMQTT" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/emqx/CocoaMQTT";
 			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 2.0.0;
+				branch = master;
+				kind = branch;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
@@ -840,9 +840,9 @@
 			package = 2762F1862846599A00C30529 /* XCRemoteSwiftPackageReference "swift-snapshot-testing" */;
 			productName = SnapshotTesting;
 		};
-		27FCDDC8283E54D400632BAE /* CocoaMQTT */ = {
+		27CBBCE928B14D0900636494 /* CocoaMQTT */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 27FCDDC7283E54D400632BAE /* XCRemoteSwiftPackageReference "CocoaMQTT" */;
+			package = 27CBBCE828B14D0900636494 /* XCRemoteSwiftPackageReference "CocoaMQTT" */;
 			productName = CocoaMQTT;
 		};
 /* End XCSwiftPackageProductDependency section */

@@ -13,29 +13,7 @@ struct HomeView: View {
         
     @EnvironmentObject var model: PatriotModel
     
-//    #if os(iOS)
-//    @Environment(\.horizontalSizeClass) private var horizontalSizeClass
-//    #endif
-//
-//    var horizontallyConstrained: Bool {
-//        #if os(iOS)
-//        return horizontalSizeClass == .compact
-//        #else
-//        return false
-//        #endif
-//    }
-
     var body: some View {
-
-//        #if os(iOS)
-//        if horizontalSizeClass == .compact {
-//            AppTabNavigation()
-//        } else {
-//            AppSidebarNavigation()
-//        }
-//        #else
-//        AppSidebarNavigation()
-//        #endif
 
         NavigationView {
             ZStack(alignment: .leading) {

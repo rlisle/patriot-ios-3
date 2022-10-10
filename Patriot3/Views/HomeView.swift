@@ -13,29 +13,7 @@ struct HomeView: View {
         
     @EnvironmentObject var model: PatriotModel
     
-//    #if os(iOS)
-//    @Environment(\.horizontalSizeClass) private var horizontalSizeClass
-//    #endif
-//
-//    var horizontallyConstrained: Bool {
-//        #if os(iOS)
-//        return horizontalSizeClass == .compact
-//        #else
-//        return false
-//        #endif
-//    }
-
     var body: some View {
-
-//        #if os(iOS)
-//        if horizontalSizeClass == .compact {
-//            AppTabNavigation()
-//        } else {
-//            AppSidebarNavigation()
-//        }
-//        #else
-//        AppSidebarNavigation()
-//        #endif
 
         NavigationView {
             ZStack(alignment: .leading) {
@@ -73,18 +51,7 @@ struct HomeView: View {
             .navigationBarTitleDisplayMode(.inline)
             .foregroundColor(Color("TextColor"))
             .toolbar {
-//                ToolBarItems(model: PatriotModel)
-                ToolbarItemGroup(placement: .navigationBarLeading) {
-                    SideMenuButton(showMenu: $model.showingMenu)
-                }
-                ToolbarItemGroup(placement: .navigationBarTrailing) {
-                    MQTTButton(isConnected: model.isConnected)
-                        .padding(.horizontal, -8)
-                    SleepingButton(sleeping: model.sleeping)
-                        .padding(.horizontal, -8)
-                    PartOfDayButton()
-                        .padding(.horizontal, -8)
-                }
+                ToolBarItems()
             }
             .gesture(DragGesture()
                 .onEnded {
@@ -114,25 +81,25 @@ struct HomeView: View {
     }
 }
 
-//struct ToolBarItems: ToolbarContent {
-//
-//    var model: PatriotModel
-//
-//    var body: some ToolbarContent {
-//
-//        ToolbarItemGroup(placement: .navigationBarLeading) {
-//            SideMenuButton(showMenu: model.showingMenu)
-//        }
-//        ToolbarItemGroup(placement: .navigationBarTrailing) {
-//            MQTTButton(isConnected: model.isConnected)
-//                .padding(.horizontal, -8)
-//            SleepingButton(sleeping: model.sleeping)
-//                .padding(.horizontal, -8)
-//            PartOfDayButton()
-//                .padding(.horizontal, -8)
-//        }
-//    }
-//}
+struct ToolBarItems: ToolbarContent {
+
+    @EnvironmentObject var model: PatriotModel
+
+    var body: some ToolbarContent {
+
+        ToolbarItemGroup(placement: .navigationBarLeading) {
+            SideMenuButton(showMenu: $model.showingMenu)
+        }
+        ToolbarItemGroup(placement: .navigationBarTrailing) {
+            MQTTButton(isConnected: model.isConnected)
+                .padding(.horizontal, -8)
+            SleepingButton(sleeping: model.sleeping)
+                .padding(.horizontal, -8)
+            PartOfDayButton()
+                .padding(.horizontal, -8)
+        }
+    }
+}
 
 
 struct HomeView_Previews: PreviewProvider {
@@ -142,11 +109,11 @@ struct HomeView_Previews: PreviewProvider {
             // List available sims: xcrun simctl list devicetypes
             HomeView()
                 .environmentObject(PatriotModel(testMode: .on))
-                //.previewDevice(PreviewDevice(rawValue: "iPhone 11 Pro"))                .previewDisplayName("With Devices")
+                .previewDevice(PreviewDevice(rawValue: "iPhone 11 Pro"))                .previewDisplayName("With Devices")
 
             HomeView()
                 .environmentObject(PatriotModel(testMode: .noDevices))
-                //.previewDevice(PreviewDevice(rawValue: "iPhone 11 Pro"))
+                .previewDevice(PreviewDevice(rawValue: "iPhone 11 Pro"))
                 .previewDisplayName("No Devices")
 
         }

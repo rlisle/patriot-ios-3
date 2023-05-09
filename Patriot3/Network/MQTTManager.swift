@@ -78,7 +78,8 @@ extension MQTTManager: MQTTSending
             print("No MQTT: Cannot send patriot/\(device), \(percent)")
             return
         }
-        let topic = "patriot/"+device
+        print("sendPatriotMessage patriot/\(device)/set")
+        let topic = "patriot/"+device+"/set"
         let message = String(percent)
         sendMessage(topic: topic, message: message)
     }

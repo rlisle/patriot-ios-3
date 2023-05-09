@@ -28,6 +28,7 @@ enum LoadingState: Int {
     case timedOut
 }
 
+// TODO: should this be @MainActor ?
 class PatriotModel: ObservableObject
 {
     // Singleton
@@ -48,6 +49,8 @@ class PatriotModel: ObservableObject
     
     @Published var latitude: Float =  30.28267
     @Published var longitude: Float = -97.63624
+    
+    @Published var rvPower: Int = 0
 
     let mqtt:           MQTTManager
     let settings:       Settings
@@ -62,6 +65,7 @@ class PatriotModel: ObservableObject
     var pongs: [ String : Date ] = [:]
     var queries: [ String : Date ] = [:]
     var resets: [ String : Date ] = [:]
+    var rvAmps: [Int] = [0, 0]
 
     var rooms: [ String ] {
         let rawRooms = devices.map { $0.room }.filter { $0 != "All" && $0 != "Default" && $0 != "Test" }
@@ -103,6 +107,7 @@ class PatriotModel: ObservableObject
             device.publisher = self
         }
         
+        // I'm not sure why this was put here.
         $sleeping.sink { value in
             print("sink sleeping = \(value)")
             //TODO: send mqtt
@@ -160,56 +165,85 @@ extension PatriotModel: MQTTReceiving {
     
     // MQTT or Particle.io message received
     // New state format: "patriot/state/room/<t>/name value"
+    //TODO: this parsing is becoming confusing. Refactor it.
     func didReceiveMessage(topic: String, message: String) {
-        
-        // Parse out known messages
         let splitTopic = topic.components(separatedBy: "/")
-        let percent: Int = Int(message) ?? -1
+        switch splitTopic[0] {
+        case "shellies":
+            handleShelliesMessages(topic: topic, message: message)
+        case "patriot":
+            handlePatriotMessages(topic: topic, message: message)
+        case "log":
+            handleLogMessages(topic: topic, message: message)
+        default:
+            print("Unknown MQTT message: \(topic) \(message)")
+        }
+    }
+    
+    // New MQTT protocol -
+    func handlePatriotMessages(topic: String, message: String) {
+        let splitTopic = topic.components(separatedBy: "/")
         let command = splitTopic[1]
-        
+        let percent = messageToInt(message)
+
         switch (command, splitTopic.count) {
-            
         case (_, 1):                                    // Topic: patriot, Message: device:percent
             handleLegacyCommand(message: message)
-            
         case (_, 2):
             handleCommand(name: command, percent:percent)
-            
+        case ("ack", _):
+            print("ack: \(splitTopic), \(message)")
         case ("alive", 3):
             alive[ splitTopic[2] ] = message
-            
         case ("log", 3):
             logs.append( splitTopic[2] + message )
-            
         case ("loglevel", 3):
             loglevels[ splitTopic[2] ] = message
-            
         case ("memory", 2):
             memory = message
-
         case ("ping", 2):
             pings[ message ] = Date()
-            
         case ("pong", 2):
             pongs[ message ] = Date()
-
         case ("query", 2):
             queries[ message ] = Date()
-            
         case ("reset", 2):
             resets[ message ] = Date()
-            
         case ("state", 5):
             let room = splitTopic[2]
             let type = splitTopic[3].uppercased()
             let deviceName = splitTopic[4]
             handleState(name: deviceName, room: room, type: type, percent: percent)
-
         default:
-            print("Message unrecognized or deprecated: \(topic), \(message)")
+            if splitTopic.count == 3 && splitTopic[2] == "set" {
+                handleCommand(name: command, percent: percent)
+            } else {
+                print("Message unrecognized or deprecated: \(command), \(message)")
+            }
         }
     }
-    
+
+    func handleShelliesMessages(topic: String, message: String) {
+        let splitTopic = topic.components(separatedBy: "/")
+        if splitTopic.count == 5 && splitTopic[4] == "power" {
+            let index = splitTopic[3] == "1" ? 1 : 0
+            rvAmps[index] = Int(message) ?? 0
+            Task {
+                await MainActor.run {
+                    let amps = Int( (rvAmps[0] + rvAmps[1]) / 120)
+                    if amps != rvPower {
+                        print("RV Amps: \(amps)")
+                        rvPower = amps
+                    }
+                }
+            }
+        }
+    }
+
+    func handleLogMessages(topic: String, message: String) {
+        logs.append("\(topic): \(message)")
+    }
+
     func isDisplayableDevice(type: String) -> Bool {
         //let displayableTypes = "CFLR"
         return /*displayableTypes.contains(type)*/ type == "C" || type == "F" || type == "L" || type == "R"
@@ -240,7 +274,7 @@ extension PatriotModel {
             print("Legacy command missing colon")
             return
         }
-        let percent: Int = Int(splitMessage[1]) ?? -1
+        let percent = messageToInt(splitMessage[1])
         let deviceName = splitMessage[0]
         guard handleSpecialNames(name: deviceName, percent: percent) == false else {
             return
@@ -275,6 +309,17 @@ extension PatriotModel {
 
         }
         return false
+    }
+    
+    func messageToInt(_ message: String) -> Int {
+        switch message {
+        case "true":
+            return 100
+        case "false":
+            return 0
+        default:
+            return Int(message) ?? 0
+        }
     }
 }
 

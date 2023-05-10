@@ -8,6 +8,7 @@
 
 import XCTest
 import SwiftUI
+import SnapshotTesting
 @testable import Patriot3
 
 class DeviceDetailTests: XCTestCase {
@@ -21,6 +22,6 @@ class DeviceDetailTests: XCTestCase {
     }
     
     func testDeviceDetailView() throws {
-        assertSnapshot(matching: vc, as: .image(on: .iPhone8), record: false)
+        assertSnapshot(matching: vc, as: .image(on: .iPhone13Pro), record: false)
     }
 }

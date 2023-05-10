@@ -46,8 +46,8 @@
             filePath = "Patriot3/Models/PatriotModel.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "293"
-            endingLineNumber = "293"
+            startingLineNumber = "295"
+            endingLineNumber = "295"
             landmarkName = "handleCommand(name:percent:)"
             landmarkType = "7">
             <Locations>

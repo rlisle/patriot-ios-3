@@ -195,6 +195,8 @@ extension PatriotModel: MQTTReceiving {
             print("ack: \(splitTopic), \(message)")
         case ("alive", 3):
             alive[ splitTopic[2] ] = message
+        case ("amps", 3):
+            handleAmps(message)
         case ("log", 3):
             logs.append( splitTopic[2] + message )
         case ("loglevel", 3):
@@ -215,10 +217,10 @@ extension PatriotModel: MQTTReceiving {
             let deviceName = splitTopic[4]
             handleState(name: deviceName, room: room, type: type, percent: percent)
         default:
-            if splitTopic.count == 3 && splitTopic[2] == "set" {
+            if let device = getDevice(name: command) {
                 handleCommand(name: command, percent: percent)
             } else {
-                print("Message unrecognized or deprecated: \(command), \(message)")
+                print("Message unrecognized or deprecated: \(topic), \(message)")
             }
         }
     }
@@ -309,6 +311,11 @@ extension PatriotModel {
 
         }
         return false
+    }
+    
+    func handleAmps(_ message: String) {
+        let amps = messageToInt(message)
+        print("Amps = \(amps)") //TODO: display this somewhere?
     }
     
     func messageToInt(_ message: String) -> Int {

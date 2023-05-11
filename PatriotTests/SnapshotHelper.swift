@@ -82,36 +82,37 @@ extension SwiftUI.View {
 /// - Returns: A directory for the snapshots.
 /// - Note: It makes strong assumptions about the structure of the project; namely,
 ///   it expects the project to consist of a single package located at the root.
-func snapshotDirectory(
-    for file: StaticString,
-    testsPathComponent: String = "Tests",
-    packagesPathComponent: String = "Packages",
-    ciScriptsPathComponent: String = "ci_scripts",
-    snapshotsPathComponent: String = "__Snapshots__"
-) -> String {
-    let fileURL = URL(fileURLWithPath: "\(file)", isDirectory: false)
-
-    let packageRootPath = fileURL
-        .pathComponents
-        .prefix(while: { $0 != testsPathComponent && $0 != packagesPathComponent })
-    print("snapshotDirectory: testsPathComponent = \(testsPathComponent)")
-
-    let testsPath = packageRootPath + [testsPathComponent]
-    print("snapshotDirectory: testsPath = \(testsPath)")
-
-    let relativePath = fileURL
-        .deletingPathExtension()
-        .pathComponents
-        .dropFirst(testsPath.count)
-    print("snapshotDirectory: relativePath = \(relativePath)")
-
-    print("snapshotDirectory: packageRootPath = \(packageRootPath)")
-    print("snapshotDirectory: ciScriptsPathComponent = \(ciScriptsPathComponent)")
-    print("snapshotDirectory: snapshotsPathComponent = \(snapshotsPathComponent)")
-    let snapshotDirectoryPath = packageRootPath + [ciScriptsPathComponent, snapshotsPathComponent] +
-        relativePath
-    return snapshotDirectoryPath.joined(separator: "/")
-}
+//func snapshotDirectory(
+//    for file: StaticString,
+//    testsPathComponent: String = "Tests",
+//    packagesPathComponent: String = "Packages",
+//    ciScriptsPathComponent: String = "ci_scripts",
+//    snapshotsPathComponent: String = "__Snapshots__"
+//) -> String {
+//    let fileURL = URL(fileURLWithPath: "\(file)", isDirectory: false)
+//    print("snapshotDirectory: file = \(file)")
+//
+//    let packageRootPath = fileURL
+//        .pathComponents
+//        .prefix(while: { $0 != testsPathComponent && $0 != packagesPathComponent })
+//    print("snapshotDirectory: testsPathComponent = \(testsPathComponent)")
+//
+//    let testsPath = packageRootPath + [testsPathComponent]
+//    print("snapshotDirectory: testsPath = \(testsPath)")
+//
+//    let relativePath = fileURL
+//        .deletingPathExtension()
+//        .pathComponents
+//        .dropFirst(testsPath.count)
+//    print("snapshotDirectory: relativePath = \(relativePath)")
+//
+//    print("snapshotDirectory: packageRootPath = \(packageRootPath)")
+//    print("snapshotDirectory: ciScriptsPathComponent = \(ciScriptsPathComponent)")
+//    print("snapshotDirectory: snapshotsPathComponent = \(snapshotsPathComponent)")
+//    let snapshotDirectoryPath = packageRootPath + [ciScriptsPathComponent, snapshotsPathComponent] +
+//        relativePath
+//    return snapshotDirectoryPath.joined(separator: "/")
+//}
 
 /// Asserts that a given value matches references on disk.
 ///
@@ -127,31 +128,34 @@ func snapshotDirectory(
 ///   - line: The line number on which failure occurred. Defaults to the line number on which this
 /// function was called.
 ///   - testsPathComponent: The name of the tests directory. Defaults to “Tests”.
-@MainActor
-public func ciAssertSnapshot<Value>(
-    matching value: @autoclosure () throws -> Value,
-    as snapshotting: Snapshotting<Value, some Any>,
-    named name: String? = nil,
-    record recording: Bool = false,
-    timeout: TimeInterval = 5,
-    file: StaticString = #file,
-    testName: String = #function,
-    line: UInt = #line,
-    testsPathComponent: String = "Tests"
-) {
-    let dir = snapshotDirectory(for: file, testsPathComponent: testsPathComponent)
-    print("ciAssertSnapshot dir = \(dir)")
-    let failure = verifySnapshot(
-        matching: try value(),
-        as: snapshotting,
-        named: name,
-        record: recording,
-        snapshotDirectory: snapshotDirectory(for: file, testsPathComponent: testsPathComponent),
-        timeout: timeout,
-        file: file,
-        testName: testName
-    )
-
-    guard let message = failure else { return }
-    XCTFail(message, file: file, line: line)
-}
+////TODO: provide simplified method for image
+//@MainActor
+//public func ciAssertSnapshot<Value>(
+//    matching value: @autoclosure () throws -> Value,
+//    as snapshotting: Snapshotting<Value, some Any>,
+//    named name: String? = nil,
+//    record recording: Bool = false,
+//    timeout: TimeInterval = 5,
+//    file: StaticString = #file,
+//    testName: String = #function,
+//    line: UInt = #line,
+//    testsPathComponent: String = "Tests"
+//) {
+//    //DEBUG: hardcode directory path until it works
+//    let dir = "//Users/ronlisle/GitRepos/patriot-ios-3/ci_scripts/PatriotTests/"
+////    let dir = snapshotDirectory(for: file, testsPathComponent: testsPathComponent)
+//    print("ciAssertSnapshot dir = \(dir)")
+//    let failure = verifySnapshot(
+//        matching: try value(),
+//        as: snapshotting,
+//        named: name,
+//        record: recording,
+//        snapshotDirectory: snapshotDirectory(for: file, testsPathComponent: testsPathComponent),
+//        timeout: timeout,
+//        file: file,
+//        testName: testName
+//    )
+//
+//    guard let message = failure else { return }
+//    XCTFail(message, file: file, line: line)
+//}

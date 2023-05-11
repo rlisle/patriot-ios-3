@@ -831,7 +831,7 @@
 			repositoryURL = "https://github.com/pointfreeco/swift-snapshot-testing.git";
 			requirement = {
 				kind = upToNextMajorVersion;
-				minimumVersion = 1.0.0;
+				minimumVersion = 1.11.0;
 			};
 		};
 		27CBBCE828B14D0900636494 /* XCRemoteSwiftPackageReference "CocoaMQTT" */ = {

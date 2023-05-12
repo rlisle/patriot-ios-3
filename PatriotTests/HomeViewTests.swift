@@ -47,11 +47,13 @@ class HomeViewTests: XCTestCase {
             filePath = localPath
         }
         print("filePath = \(filePath)")
+        //let snapshotDirectory = ProcessInfo.processInfo.environment["SNAPSHOT_REFERENCE_DIR"]! + "/" + #file
         assertSnapshot(
             matching: homeView.toVC(),
             as: .image(on: .iPhone13Pro),
-            record: false,
-            file: filePath)
+            record: false)
+//            snapshotDirectory: snapshotDirectory)
+//            file: filePath)
     }
     
     func testHomeViewWithChangedLights() throws {

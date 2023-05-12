@@ -6,20 +6,14 @@ pwd
 echo "CI = $CI" # CI = TRUE
 echo "ls -al" # ., .., Artifacts, ci_post_clone.sh, ci_post_xcodebuild.sh
 ls -al
-echo "ls -al __Snapshots__"
-ls -al __Snapshots__
+echo "ls -al PatriotTests"
+ls -al PatriotTests
 echo "ls -al __Snapshots__/PatriotTests"
 ls -al __Snapshots__/PatriotTests
-#echo "ls -al Artifacts/PatriotTests/__Snapshots__/MenuTests" # No such file or directory
-#ls -al Snapshots/PatriotTests/__Snapshots__/MenuTests
-#echo "ls -al /Volumes/workspace/repository" # ., .., ci_scripts
-#ls -al /Volumes/workspace/repository
-#echo "ls -al /Volumes/workspace/repository/iOS"
-#ls -al /Volumes/workspace/repository/iOS
 echo "ls -al /Volumes/workspace/repository/ci_scripts" # ., .., Artifacts, ci_post_clone.sh, ci_post_xcodebuild.sh
 ls -al /Volumes/workspace/repository/ci_scripts
-#echo "ls -al Artifacts/PatriotTests/__Snapshots__/MenuTests" # testMenuView.1.png
-#ls -al Artifacts/PatriotTests/__Snapshots__/MenuTests
+echo "ls -al /Volumes/workspace/repository/ci_scripts/PatriotTests" # ., .., Artifacts, ci_post_clone.sh, ci_post_xcodebuild.sh
+ls -al /Volumes/workspace/repository/ci_scripts/PatriotTests
 echo "env"
 env
 echo "Done"

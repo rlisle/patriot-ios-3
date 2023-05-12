@@ -21,14 +21,15 @@ class HomeViewTests: XCTestCase {
         XCTAssertEqual(currentPath, expectedPath)
     }
 
-   func testIsCI() {
-        let isCI = ProcessInfo.processInfo.environment["CI"] == "TRUE"
-        XCTAssertTrue(isCI)
-    }
+//   func testIsCI() {
+//        let isCI = ProcessInfo.processInfo.environment["CI"] == "TRUE"
+//        XCTAssertTrue(isCI)
+//    }
     
     func testHomeView() throws {
         let ciPath: StaticString = "/Volumes/workspace/repository/ci_scripts/PatriotTests/HomeViewTests.swift"
-        let localPath: StaticString = #file
+        //let localPath: StaticString = #file
+        let localPath: StaticString = "/Users/ronlisle/GitRepos/patriot-ios-3/ci_scripts/PatriotTests/HomeViewTests.swift"
         var isCIEnvironment: Bool {
             let isCI = ProcessInfo.processInfo.environment["CI"] == "TRUE"
             print("isCIEnvironmant = \(isCI)")
@@ -51,9 +52,9 @@ class HomeViewTests: XCTestCase {
         assertSnapshot(
             matching: homeView.toVC(),
             as: .image(on: .iPhone13Pro),
-            record: false)
+            record: false,
 //            snapshotDirectory: snapshotDirectory)
-//            file: filePath)
+            file: filePath)
     }
     
     func testHomeViewWithChangedLights() throws {

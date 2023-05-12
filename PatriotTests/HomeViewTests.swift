@@ -27,7 +27,7 @@ class HomeViewTests: XCTestCase {
     }
     
     func testHomeView() throws {
-        let ciPath: StaticString = "/Volumes/workspace/repository/ci_scripts/PatriotTests/HomeViewtests.swift"
+        let ciPath: StaticString = "/Volumes/workspace/repository/ci_scripts/PatriotTests/HomeViewTests.swift"
         let localPath: StaticString = #file
         var isCIEnvironment: Bool {
             let isCI = ProcessInfo.processInfo.environment["CI"] == "TRUE"

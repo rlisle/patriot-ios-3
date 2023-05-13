@@ -8,9 +8,9 @@
 
 import XCTest
 import SwiftUI
-import SnapshotTesting
 @testable import Patriot3
 
+@MainActor
 class MenuViewTests: XCTestCase {
     
     var viewController: UIViewController!
@@ -23,6 +23,6 @@ class MenuViewTests: XCTestCase {
     }
     
     func testMenuView() throws {
-        assertSnapshot(matching: viewController, as: .image(on: .iPhone13Pro), record: false)
+        ciAssertSnapshot(matching: viewController, as: .image(on: .iPhone13Pro), record: false)
     }
 }

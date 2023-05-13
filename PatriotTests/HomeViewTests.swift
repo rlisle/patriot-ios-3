@@ -9,7 +9,6 @@ import Foundation
 import XCTest
 import SwiftUI
 @testable import Patriot3
-import SnapshotTesting
 
 @MainActor
 class HomeViewTests: XCTestCase {

@@ -5,6 +5,7 @@
 //  Created by Ron Lisle on 5/25/21.
 //
 
+import PreviewSnapshots
 import SwiftUI
 
 struct HomeView: View {
@@ -103,19 +104,22 @@ struct ToolBarItems: ToolbarContent {
 
 
 struct HomeView_Previews: PreviewProvider {
+    
     static var previews: some View {
-        Group {
-
-            // List available sims: xcrun simctl list devicetypes
-            HomeView()
-                .environmentObject(PatriotModel(testMode: .on))
-                .previewDevice(PreviewDevice(rawValue: "iPhone 11 Pro"))                .previewDisplayName("With Devices")
-
-            HomeView()
-                .environmentObject(PatriotModel(testMode: .noDevices))
-                .previewDevice(PreviewDevice(rawValue: "iPhone 11 Pro"))
-                .previewDisplayName("No Devices")
-
-        }
+        snapshots.previews
+    }
+    
+    static var snapshots: PreviewSnapshots<String> {
+        PreviewSnapshots(
+            configurations: [
+                .init(name: "With Devices", state: "on"),
+                .init(name: "Without Devices", state: "noDevices")
+            ],
+            configure: { state in
+                HomeView()
+                    .environmentObject(PatriotModel(testMode: TestMode(rawValue: state)!))
+                .previewDevice(PreviewDevice(rawValue: "iPhone 14 Pro"))
+            }
+        )
     }
 }

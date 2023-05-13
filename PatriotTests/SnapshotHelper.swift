@@ -3,7 +3,8 @@
 //
 
 import SwiftUI
-/*@_exported*/ import SnapshotTesting
+@_exported import SnapshotTesting
+import PreviewSnapshots
 import XCTest
 
 
@@ -85,4 +86,37 @@ public func ciAssertSnapshot<Value>(
 
     guard let message = failure else { return }
     XCTFail(message, file: file, line: line)
+}
+
+extension PreviewSnapshots {
+    /// Assert that all of the snapshots defined in a `PreviewSnapshots` collection match their
+    /// snapshots recorded on disk.
+    ///
+    /// - Parameters:
+    ///   - snapshotting: Snapshotting instance for  `AnyView` into a `UIImage`.
+    ///   - recording: Whether or not to record a new reference.
+    ///   - file: The file in which failure occurred. Defaults to the file name of the test case in
+    ///         which this function was called.
+    ///   - testName: The name of the test in which failure occurred. Defaults to the function name
+    ///         of the test case in which this function was called.
+    ///   - line: The line number on which failure occurred. Defaults to the line number on which
+    ///         this function was called.
+    @MainActor
+    public func ciAssertSnapshots(
+        as snapshotting: Snapshotting<AnyView, UIImage> = .image,
+        record recording: Bool = false,
+        file: StaticString = #file,
+        testName: String = #function,
+        line: UInt = #line
+    ) {
+        for configuration in configurations {
+            ciAssertSnapshot(
+                matching: configure(configuration.state),
+                as: snapshotting,
+                named: configuration.name,
+                record: recording,
+                file: file, testName: testName, line: line
+            )
+        }
+    }
 }

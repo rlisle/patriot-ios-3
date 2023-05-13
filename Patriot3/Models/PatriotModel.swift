@@ -14,7 +14,7 @@
 import SwiftUI
 import CoreLocation
 
-enum TestMode: Int {
+enum TestMode: String {
     case off
     case on
     case noDevices

@@ -30,10 +30,10 @@
             filePath = "Patriot3/Models/PatriotModel.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "295"
-            endingLineNumber = "295"
-            landmarkName = "handleCommand(name:percent:)"
-            landmarkType = "7">
+            startingLineNumber = "289"
+            endingLineNumber = "289"
+            landmarkName = "PatriotModel"
+            landmarkType = "21">
             <Locations>
                <Location
                   uuid = "69EC4E06-48B7-4DFA-BD98-E642B1673147 - cdd21ea7cf9d4a66"
@@ -93,10 +93,10 @@
             filePath = "Patriot3/Models/PatriotModel.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "189"
-            endingLineNumber = "189"
-            landmarkName = "handlePatriotMessages(topic:message:)"
-            landmarkType = "7">
+            startingLineNumber = "183"
+            endingLineNumber = "183"
+            landmarkName = "PatriotModel"
+            landmarkType = "21">
             <Locations>
                <Location
                   uuid = "235107FD-CB54-4C08-BA2F-0D18DDF5E681 - c2cd597c28d5f498"

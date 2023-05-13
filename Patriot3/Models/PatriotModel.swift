@@ -107,12 +107,6 @@ class PatriotModel: ObservableObject
             device.publisher = self
         }
         
-        // I'm not sure why this was put here.
-        $sleeping.sink { value in
-            print("sink sleeping = \(value)")
-            //TODO: send mqtt
-        }
-        
         locManager.desiredAccuracy = kCLLocationAccuracyHundredMeters   // Only need to know State/timezone
         locManager.requestWhenInUseAuthorization()
     }

@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		270A2A8E2A0C356A00DD8763 /* SnapshotTesting in Frameworks */ = {isa = PBXBuildFile; productRef = 270A2A8D2A0C356A00DD8763 /* SnapshotTesting */; };
 		27209B0128292E48005A8C2A /* PartOfDay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27209B0028292E48005A8C2A /* PartOfDay.swift */; };
+		272B56CA2A0FB01100F24805 /* PreviewSnapshots in Frameworks */ = {isa = PBXBuildFile; productRef = 272B56C92A0FB01100F24805 /* PreviewSnapshots */; };
+		272B56CC2A0FB01100F24805 /* PreviewSnapshotsTesting in Frameworks */ = {isa = PBXBuildFile; productRef = 272B56CB2A0FB01100F24805 /* PreviewSnapshotsTesting */; };
 		2741D16E283119640077E6CA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2741D16D283119640077E6CA /* AppDelegate.swift */; };
 		2741D170283126090077E6CA /* Intents.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = 2741D16F283126090077E6CA /* Intents.intentdefinition */; };
 		27473020265D182E00C8EFDE /* PatriotApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2747301F265D182E00C8EFDE /* PatriotApp.swift */; };
@@ -131,6 +133,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				279DEDB028B152A900A7859F /* CocoaMQTT in Frameworks */,
+				272B56CA2A0FB01100F24805 /* PreviewSnapshots in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -138,6 +141,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				272B56CC2A0FB01100F24805 /* PreviewSnapshotsTesting in Frameworks */,
 				270A2A8E2A0C356A00DD8763 /* SnapshotTesting in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -343,6 +347,7 @@
 			name = Patriot3;
 			packageProductDependencies = (
 				279DEDAF28B152A900A7859F /* CocoaMQTT */,
+				272B56C92A0FB01100F24805 /* PreviewSnapshots */,
 			);
 			productName = Patriot;
 			productReference = 2747301C265D182E00C8EFDE /* Patriot3.app */;
@@ -364,6 +369,7 @@
 			name = Patriot3Tests;
 			packageProductDependencies = (
 				270A2A8D2A0C356A00DD8763 /* SnapshotTesting */,
+				272B56CB2A0FB01100F24805 /* PreviewSnapshotsTesting */,
 			);
 			productName = PatriotTests;
 			productReference = 2747302D265D182F00C8EFDE /* Patriot3Tests.xctest */;
@@ -421,6 +427,7 @@
 			packageReferences = (
 				27CBBCE828B14D0900636494 /* XCRemoteSwiftPackageReference "CocoaMQTT" */,
 				270A2A8C2A0C356A00DD8763 /* XCRemoteSwiftPackageReference "swift-snapshot-testing" */,
+				272B56C82A0FB01100F24805 /* XCRemoteSwiftPackageReference "swiftui-preview-snapshots" */,
 			);
 			productRefGroup = 2747301D265D182E00C8EFDE /* Products */;
 			projectDirPath = "";
@@ -834,6 +841,14 @@
 				minimumVersion = 1.11.0;
 			};
 		};
+		272B56C82A0FB01100F24805 /* XCRemoteSwiftPackageReference "swiftui-preview-snapshots" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/doordash-oss/swiftui-preview-snapshots";
+			requirement = {
+				branch = main;
+				kind = branch;
+			};
+		};
 		27CBBCE828B14D0900636494 /* XCRemoteSwiftPackageReference "CocoaMQTT" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/emqx/CocoaMQTT";
@@ -849,6 +864,16 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 270A2A8C2A0C356A00DD8763 /* XCRemoteSwiftPackageReference "swift-snapshot-testing" */;
 			productName = SnapshotTesting;
+		};
+		272B56C92A0FB01100F24805 /* PreviewSnapshots */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 272B56C82A0FB01100F24805 /* XCRemoteSwiftPackageReference "swiftui-preview-snapshots" */;
+			productName = PreviewSnapshots;
+		};
+		272B56CB2A0FB01100F24805 /* PreviewSnapshotsTesting */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 272B56C82A0FB01100F24805 /* XCRemoteSwiftPackageReference "swiftui-preview-snapshots" */;
+			productName = PreviewSnapshotsTesting;
 		};
 		279DEDAF28B152A900A7859F /* CocoaMQTT */ = {
 			isa = XCSwiftPackageProductDependency;

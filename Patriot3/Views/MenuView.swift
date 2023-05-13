@@ -7,6 +7,7 @@
 //  Created by Ron Lisle on 7/13/21.
 //
 
+import PreviewSnapshots
 import SwiftUI
 
 struct MenuView: View {
@@ -183,10 +184,21 @@ struct SleepButton: View {
 }
 
 struct MenuView_Previews: PreviewProvider {
+    
     static var previews: some View {
-        MenuView()
-            .environmentObject(PatriotModel(testMode: .on))
-            .previewLayout(PreviewLayout.fixed(width: 200, height: 800))
-            .previewDisplayName("Side Menu")
+        snapshots.previews
+    }
+    
+    static var snapshots: PreviewSnapshots<String> {
+        PreviewSnapshots(
+            configurations: [
+                .init(name: "Side Menu", state: "menu"),
+            ],
+            configure: { state in
+                MenuView()
+                    .environmentObject(PatriotModel(testMode: .on))
+                    .previewLayout(PreviewLayout.fixed(width: 200, height: 800))
+            }
+        )
     }
 }

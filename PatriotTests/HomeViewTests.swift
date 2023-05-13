@@ -5,6 +5,7 @@
 //  Created by Ron Lisle on 5/31/22.
 //
 
+import PreviewSnapshotsTesting
 import XCTest
 @testable import Patriot3
 
@@ -26,5 +27,9 @@ class HomeViewTests: XCTestCase {
         modelView.devices[0].percent = 100
         let homeView = HomeView().environmentObject(modelView)
         ciAssertSnapshot(matching: homeView.toVC(), as: .image(on: .iPhone13Pro), record: false)
+    }
+    
+    func testHomeViewPreview() throws {
+        HomeView_Previews.snapshots.ciAssertSnapshots()
     }
 }

@@ -6,6 +6,7 @@
 //
 
 
+import PreviewSnapshotsTesting
 import XCTest
 @testable import Patriot3
 
@@ -16,5 +17,9 @@ class DeviceDetailTests: XCTestCase {
         let modelView = PatriotModel(testMode: .on)
         let vc = DeviceDetailView().environmentObject(modelView)
         ciAssertSnapshot(matching: vc.toVC(), as: .image(on: .iPhone13Pro), record: false)
+    }
+    
+    func testHomeViewPreview() throws {
+        DeviceDetailView_Previews.snapshots.ciAssertSnapshots()
     }
 }

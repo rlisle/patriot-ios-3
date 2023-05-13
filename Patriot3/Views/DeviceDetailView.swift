@@ -5,6 +5,7 @@
 //  Created by Ron Lisle on 5/22/22.
 //
 
+import PreviewSnapshots
 import SwiftUI
 
 //struct VerticalSlider: View {
@@ -99,7 +100,18 @@ struct DeviceDetailView: View {
 
 struct DeviceDetailView_Previews: PreviewProvider {
     static var previews: some View {
-        DeviceDetailView()
-            .environmentObject(PatriotModel(testMode: .on))
+        snapshots.previews
+    }
+
+    static var snapshots: PreviewSnapshots<String> {
+        PreviewSnapshots(
+            configurations: [
+                .init(name: "Device Detail", state: "detail"),
+            ],
+            configure: { state in
+                DeviceDetailView()
+                    .environmentObject(PatriotModel(testMode: .on))
+            }
+        )
     }
 }

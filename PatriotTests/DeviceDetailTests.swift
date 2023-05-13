@@ -11,6 +11,7 @@ import SwiftUI
 import SnapshotTesting
 @testable import Patriot3
 
+@MainActor
 class DeviceDetailTests: XCTestCase {
     
     var vc: UIViewController!
@@ -22,6 +23,6 @@ class DeviceDetailTests: XCTestCase {
     }
     
     func testDeviceDetailView() throws {
-        assertSnapshot(matching: vc, as: .image(on: .iPhone13Pro), record: false)
+        ciAssertSnapshot(matching: vc, as: .image(on: .iPhone13Pro), record: false)
     }
 }

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		270A2A8E2A0C356A00DD8763 /* SnapshotTesting in Frameworks */ = {isa = PBXBuildFile; productRef = 270A2A8D2A0C356A00DD8763 /* SnapshotTesting */; };
 		27209B0128292E48005A8C2A /* PartOfDay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27209B0028292E48005A8C2A /* PartOfDay.swift */; };
 		2741D16E283119640077E6CA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2741D16D283119640077E6CA /* AppDelegate.swift */; };
 		2741D170283126090077E6CA /* Intents.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = 2741D16F283126090077E6CA /* Intents.intentdefinition */; };
@@ -26,9 +27,8 @@
 		274D66C8269DBDBD00303F1E /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 274D66C7269DBDBD00303F1E /* MainView.swift */; };
 		274D66CA269DC06700303F1E /* MenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 274D66C9269DC06700303F1E /* MenuView.swift */; };
 		274D66CC269E512800303F1E /* StatefulPreviewWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 274D66CB269E512800303F1E /* StatefulPreviewWrapper.swift */; };
-		2756ECCB286343D100345AB5 /* AssertSnapshot.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2756ECCA286343D100345AB5 /* AssertSnapshot.swift */; };
+		2756ECCB286343D100345AB5 /* SnapshotHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2756ECCA286343D100345AB5 /* SnapshotHelper.swift */; };
 		2762F18A2846C6FF00C30529 /* HomeViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2762F1892846C6FF00C30529 /* HomeViewTests.swift */; };
-		2762F18E284777DF00C30529 /* SnapshotTesting in Frameworks */ = {isa = PBXBuildFile; productRef = 2762F18D284777DF00C30529 /* SnapshotTesting */; };
 		2762F19028477C7000C30529 /* DeviceDetailTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2762F18F28477C7000C30529 /* DeviceDetailTests.swift */; };
 		2762F19228477DC700C30529 /* MenuTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2762F19128477DC700C30529 /* MenuTests.swift */; };
 		2762F19A28478A2200C30529 /* PatriotUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2762F19928478A2200C30529 /* PatriotUITests.swift */; };
@@ -104,7 +104,7 @@
 		274D66C7269DBDBD00303F1E /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		274D66C9269DC06700303F1E /* MenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuView.swift; sourceTree = "<group>"; };
 		274D66CB269E512800303F1E /* StatefulPreviewWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatefulPreviewWrapper.swift; sourceTree = "<group>"; };
-		2756ECCA286343D100345AB5 /* AssertSnapshot.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssertSnapshot.swift; sourceTree = "<group>"; };
+		2756ECCA286343D100345AB5 /* SnapshotHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SnapshotHelper.swift; sourceTree = "<group>"; };
 		2757A78928AA6C5500895DB5 /* ci_post_xcodebuild.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; path = ci_post_xcodebuild.sh; sourceTree = "<group>"; };
 		2757A78A28AA6C5500895DB5 /* ci_post_clone.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; path = ci_post_clone.sh; sourceTree = "<group>"; };
 		2762F1892846C6FF00C30529 /* HomeViewTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewTests.swift; sourceTree = "<group>"; };
@@ -138,7 +138,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2762F18E284777DF00C30529 /* SnapshotTesting in Frameworks */,
+				270A2A8E2A0C356A00DD8763 /* SnapshotTesting in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -213,7 +213,7 @@
 		27473030265D182F00C8EFDE /* PatriotTests */ = {
 			isa = PBXGroup;
 			children = (
-				2756ECCA286343D100345AB5 /* AssertSnapshot.swift */,
+				2756ECCA286343D100345AB5 /* SnapshotHelper.swift */,
 				27473031265D182F00C8EFDE /* PatriotModelTests.swift */,
 				27D46755283972A000C5CD5A /* MQTTTests.swift */,
 				2762F1892846C6FF00C30529 /* HomeViewTests.swift */,
@@ -363,7 +363,7 @@
 			);
 			name = Patriot3Tests;
 			packageProductDependencies = (
-				2762F18D284777DF00C30529 /* SnapshotTesting */,
+				270A2A8D2A0C356A00DD8763 /* SnapshotTesting */,
 			);
 			productName = PatriotTests;
 			productReference = 2747302D265D182F00C8EFDE /* Patriot3Tests.xctest */;
@@ -419,8 +419,8 @@
 			);
 			mainGroup = 27473013265D182E00C8EFDE;
 			packageReferences = (
-				2762F1862846599A00C30529 /* XCRemoteSwiftPackageReference "swift-snapshot-testing" */,
 				27CBBCE828B14D0900636494 /* XCRemoteSwiftPackageReference "CocoaMQTT" */,
+				270A2A8C2A0C356A00DD8763 /* XCRemoteSwiftPackageReference "swift-snapshot-testing" */,
 			);
 			productRefGroup = 2747301D265D182E00C8EFDE /* Products */;
 			projectDirPath = "";
@@ -500,7 +500,7 @@
 				2762F19028477C7000C30529 /* DeviceDetailTests.swift in Sources */,
 				2762F19228477DC700C30529 /* MenuTests.swift in Sources */,
 				2762F18A2846C6FF00C30529 /* HomeViewTests.swift in Sources */,
-				2756ECCB286343D100345AB5 /* AssertSnapshot.swift in Sources */,
+				2756ECCB286343D100345AB5 /* SnapshotHelper.swift in Sources */,
 				27473032265D182F00C8EFDE /* PatriotModelTests.swift in Sources */,
 				27D46756283972A000C5CD5A /* MQTTTests.swift in Sources */,
 			);
@@ -826,12 +826,12 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		2762F1862846599A00C30529 /* XCRemoteSwiftPackageReference "swift-snapshot-testing" */ = {
+		270A2A8C2A0C356A00DD8763 /* XCRemoteSwiftPackageReference "swift-snapshot-testing" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/pointfreeco/swift-snapshot-testing.git";
 			requirement = {
 				kind = upToNextMajorVersion;
-				minimumVersion = 1.10.0;
+				minimumVersion = 1.11.0;
 			};
 		};
 		27CBBCE828B14D0900636494 /* XCRemoteSwiftPackageReference "CocoaMQTT" */ = {
@@ -845,9 +845,9 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		2762F18D284777DF00C30529 /* SnapshotTesting */ = {
+		270A2A8D2A0C356A00DD8763 /* SnapshotTesting */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 2762F1862846599A00C30529 /* XCRemoteSwiftPackageReference "swift-snapshot-testing" */;
+			package = 270A2A8C2A0C356A00DD8763 /* XCRemoteSwiftPackageReference "swift-snapshot-testing" */;
 			productName = SnapshotTesting;
 		};
 		279DEDAF28B152A900A7859F /* CocoaMQTT */ = {

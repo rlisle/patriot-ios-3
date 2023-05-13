@@ -3,8 +3,7 @@
 //
 
 import SwiftUI
-//import Foundation
-@_exported import SnapshotTesting
+/*@_exported*/ import SnapshotTesting
 import XCTest
 
 
@@ -15,15 +14,6 @@ extension SwiftUI.View {
         return vc
     }
 }
-
-//public func snapshotPath(_ file: String) -> String {
-//    if ProcessInfo.processInfo.environment["CI"] == "TRUE" {
-//        return "/Volumes/workspace/repository/ci_scripts/PatriotTests/\(file)"
-//    } else {
-//        return "/Users/ronlisle/GitRepos/patriot-ios-3/ci_scripts/PatriotTests/\(file)"
-//    }
-//}
-
 
 /// Returns a valid snapshot directory under the project’s `ci_scripts`.
 ///
@@ -39,26 +29,20 @@ func snapshotDirectory(
     snapshotsPathComponent: String = "__Snapshots__"
 ) -> String {
     let fileURL = URL(fileURLWithPath: "\(file)", isDirectory: false)
-    print("fileURL = \(fileURL)")
 
     let packageRootPath = fileURL
         .pathComponents
         .prefix(while: { $0 != testsPathComponent && $0 != packagesPathComponent })
-    print("packageRootPath = \(packageRootPath)")
 
     let testsPath = packageRootPath + [testsPathComponent]
-    print("testPath = \(testsPath)")
 
     let relativePath = fileURL
         .deletingPathExtension()
         .pathComponents
         .dropFirst(testsPath.count)
-    print("relativePath = \(relativePath)")
 
     let snapshotDirectoryPath = packageRootPath + [ciScriptsPathComponent, snapshotsPathComponent] +
         relativePath
-    print("snapshotDirectoryPath = \(snapshotDirectoryPath)")
-    print("return: \(snapshotDirectoryPath.joined(separator: "/"))")
     return snapshotDirectoryPath.joined(separator: "/")
 }
 
@@ -88,8 +72,6 @@ public func ciAssertSnapshot<Value>(
     line: UInt = #line,
     testsPathComponent: String = "PatriotTests"
 ) {
-    print("file: \(file)")
-    print("snapshotDirectory: \(snapshotDirectory(for: file, testsPathComponent: testsPathComponent))")
     let failure = verifySnapshot(
         matching: try value(),
         as: snapshotting,
